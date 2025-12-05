@@ -30,9 +30,14 @@ date: Dec5 2025 Fri
 - Local frame created when called 
 
 ## 2. Common Confusions 
-- Arguments vs parameters vs varaibles 
-- Operand evaluation vs frame creation 
+- formall parameters vs operands vs arguments vs variables
+1. formal parameters: names in the function definition 
+2. Operands: expressions in the function call
+3. Arguments: the evalated results of operands
+4. Variables: bindings inside a frame
+
 - Nested function calls: inner frames created first
+
 
 
 ## 3. Digrams Folder
