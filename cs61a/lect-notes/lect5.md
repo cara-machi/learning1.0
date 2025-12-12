@@ -4,8 +4,6 @@ author:
 date: Dec5 2025 Fri
 ---
 
-## 1.Core Definitions
-
 ### 1.1 Frames & Environments:
 - Frame = mapping of variables
 - Parent environment chain for variable lookup
@@ -38,19 +36,28 @@ date: Dec5 2025 Fri
 
 - Nested function calls: inner frames created first
 
-
-
-## 3. Digrams Folder
-
-### 3.1 make_adder
-
-### 3.2 compose
-
-### 3.3 compose_make_adder_call
-
-### 3.4 lambda_closure_example.md
-
-## 4. Exercise Folder
+## Compose Example & Bottlenecks
+[compose on github] 
+```python 
+from compose import compose1, square, make_adder
+add2 = make_adder(2)
+f=compose1(square,make_adder(2))
+print f(3)
+```
+**My Question**:
+1. when drawing diagrams, why drawing make_adder as the f1 frame instead of square?
+Answer: 
+1. we should evaluate the compose1(squre,make_adder(2)) in a call-expression order. 
+2. So, the order should be operator compose1, and operand square and operand make_adder(2)
+3. The reason calling the operand make_adder(2) under f1 instead of compose
+Because although operator evaluated first, all operands should be evaluated fully to values then we could apply operator on operands. 
+4. The reason calling the opearnd make_adder(2) under f1 instead of square
+Becaue square has already been the function object, and make_adder(2)is a call expression, the first step for it is to  evalaute it to a function object
+**MY Takeaway**
+1. I still sometimes call expression is evaluated to a functino object. 
+2. Simplest way to differ from function object and call expression is to find ()
+Example:
+square is a function object, square(x) is a call expression.
 
 
 
