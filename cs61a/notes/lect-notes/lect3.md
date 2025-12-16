@@ -55,3 +55,35 @@ is not a higher-order function because it returns results, not functions.
 -  ✔It uses other functions (floordiv and mod).
 - ✘But it does not return functions.
 - → Therefore, it is not a higher-order function.
+
+### My Confusion Point with concept
+- “Why the professor says a statement is executed by the interpreter to perform an action? Why does he stress interpreter?” “A statement is executed by the interpreter to perform an action.”
+- He is emphasizing who actually does the work in Python:
+
+Interpreter: The Python program that reads your code, converts it to instructions, and executes them step by step.
+
+Statement: e.g., q = divide_exact(2013, 10) or print(q)
+
+Action: Anything that affects the program’s state or produces output — like assigning a variable, calling a function, or printing.
+
+- 2️⃣ Why stress “interpreter”?
+
+Distinguish from “compiler” languages
+
+In C/C++ or Java, the compiler transforms code into machine code before running it.
+
+In Python, the interpreter executes statements immediately, line by line.
+
+Emphasizing interpreter helps you understand dynamic execution and why Python behaves the way it does (e.g., function definitions don’t run their body immediately).
+
+Clarify evaluation order
+
+Each statement is read, evaluated, and executed in order.
+
+The interpreter decides what happens for each statement. For example:
+
+- Highlight the difference between “defining” and “executing”
+
+def divide_exact(...) is executed by the interpreter to create the function object, but it does not run the body yet.
+
+When you call the function later, the interpreter executes the body.
